@@ -93,7 +93,7 @@ const (
 	authHeader = `X-Shopify-Access-Token`
 )
 
-// NewClient returns a new GitHub API client. If a nil httpClient is
+// NewClient returns a new Shopify API client. If a nil httpClient is
 // provided, http.DefaultClient will be used. To use API methods which require
 // authentication, provide a token that will be sent as part of authHeader.
 func NewClient(httpClient *http.Client, options ...Option) (*Client, error) {
