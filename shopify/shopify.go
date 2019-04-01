@@ -179,6 +179,8 @@ func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Requ
 // ctx.Err() will be returned.
 // TODO: Rate limiting
 func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*http.Response, error) {
+	req = req.WithContext(ctx)
+
 	resp, err := c.client.Do(req)
 	if err != nil {
 		// If we got an error, and the context has been canceled,
